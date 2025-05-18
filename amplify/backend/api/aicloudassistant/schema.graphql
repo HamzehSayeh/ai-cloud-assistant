@@ -1,0 +1,11 @@
+type Conversation @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  message: String!
+  sender: String!
+  timestamp: AWSDateTime!
+}
+type UserPreference @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  language: String
+  theme: String
+}
