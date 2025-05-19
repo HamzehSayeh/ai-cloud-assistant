@@ -32,7 +32,8 @@ It enables users to interact with AWS services using **natural language** throug
 
 ### 📌 Architecture Diagram
 
-![Cloud Assistant AI Architecture Diagram](./mnt/data/4f811b07-9a38-4a24-8536-df56717bd675.png)
+![Screenshot 2025-05-19 203808](https://github.com/user-attachments/assets/f09c24e7-0991-4594-a21e-9f08aa61d29a)
+
 
 ---
 
@@ -109,9 +110,9 @@ Features include:
 
 ## 🧪 Example Usage
 
-![alt text](<Screenshot 2025-05-19 at 20.40.47-1.png>)
-![alt text](<Screenshot 2025-05-19 at 20.40.17-1.png>)
 ![Screenshot 2025-05-19 at 20 40 47](https://github.com/user-attachments/assets/5b4ebdb3-375a-4e17-85e6-44796c3a7d9b)
+![Screenshot 2025-05-19 at 20 40 17](https://github.com/user-attachments/assets/169acc2e-5af5-4b11-9f0a-5fd45c859d7f)
+
 
 ---
 
@@ -130,7 +131,8 @@ query ListLogs {
   }
 }
 ```
-![alt text](<Screenshot 2025-05-19 at 20.42.02-1.png>)
+![Screenshot 2025-05-19 at 20 42 02](https://github.com/user-attachments/assets/7b08ac4c-e3f6-42d0-93b5-0c9274e1654e)
+
 ---
 
 ## 🛠️ IAM & Team Setup
