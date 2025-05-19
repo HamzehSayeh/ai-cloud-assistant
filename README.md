@@ -111,6 +111,8 @@ Features include:
 
 ![alt text](<Screenshot 2025-05-19 at 20.40.47-1.png>)
 ![alt text](<Screenshot 2025-05-19 at 20.40.17-1.png>)
+![Screenshot 2025-05-19 at 20 40 47](https://github.com/user-attachments/assets/5b4ebdb3-375a-4e17-85e6-44796c3a7d9b)
+
 ---
 
 ## 🧾 GraphQL API Reference
