@@ -1,69 +1,147 @@
-☁️ Cloud Assistant AI A serverless conversational AI web application built with AWS Amplify, Amazon Lex, AWS Lambda, and React. This assistant enables users to interact with AWS services using natural language, performing operations such as listing EC2 instances, describing S3 buckets, and more — all via a chatbot interface.
+# ☁️ Cloud Assistant AI
 
-🔧 Tech Stack Layer Technology Frontend React.js + AWS Amplify Backend Node.js (AWS Lambda functions) Auth Amazon Cognito AI Bot Amazon Lex API Layer AWS AppSync (GraphQL) Database Amazon DynamoDB Hosting AWS Amplify Hosting (CI/CD integrated from GitHub)
+**Cloud Assistant AI** is a **serverless conversational AI web application** built with **AWS Amplify**, **Amazon Lex**, **AWS Lambda**, and **React**.
 
-📐 Architecture Overview Frontend (React + Amplify): Provides the chatbot UI and interfaces with Amazon Lex.
+It enables users to interact with AWS services using **natural language** through a chatbot interface. Users can perform operations like listing EC2 instances, describing S3 buckets, and more.
 
-Amazon Lex: Powers the conversational interface with natural language understanding.
+---
 
-AWS Lambda: Handles fulfillment logic and interacts with AWS services.
+## 🔧 Tech Stack
 
-Amazon AppSync (GraphQL): Manages data and state persistence.
+| Layer         | Technology                               |
+|---------------|-------------------------------------------|
+| **Frontend**  | React.js + AWS Amplify                    |
+| **Backend**   | Node.js (AWS Lambda functions)            |
+| **Auth**      | Amazon Cognito                            |
+| **AI Bot**    | Amazon Lex                                |
+| **API Layer** | AWS AppSync (GraphQL)                     |
+| **Database**  | Amazon DynamoDB                           |
+| **Hosting**   | AWS Amplify Hosting (CI/CD from GitHub)   |
 
-Amazon Cognito: Manages user sign-up, login, and secure authentication.
+---
 
-Amazon DynamoDB: Stores user preferences, logs, and conversation history.
+## 📐 Architecture Overview
 
-Amplify Hosting: Enables CI/CD workflows with GitHub integration.
+- **React App**: Provides a chatbot UI for end users.
+- **Amazon Lex**: Handles natural language understanding.
+- **AWS Lambda**: Executes the fulfillment logic for Lex intents.
+- **AWS AppSync**: Serves as the GraphQL API layer for the app.
+- **Amazon DynamoDB**: Stores logs, preferences, and history.
+- **Amazon Cognito**: Handles secure user authentication and identity.
+- **AWS CodeCommit**: Source control and CI/CD pipeline integrated with Amplify.
 
-📌 Diagram: (Insert architecture diagram here once available)
+### 📌 Architecture Diagram
 
-🚀 Setup Instructions
+![Cloud Assistant AI Architecture Diagram](./mnt/data/4f811b07-9a38-4a24-8536-df56717bd675.png)
 
-Clone the Repository bash Copy Edit git clone https://github.com/HamzehSayeh/cloud-assistant-ai.git cd cloud-assistant-ai
+---
 
-Install Dependencies bash Copy Edit npm install
+## 🚀 Setup Instructions
 
-Amplify CLI Configuration bash Copy Edit npm install -g @aws-amplify/cli amplify configure Follow CLI prompts to link your AWS account and set up credentials.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/HamzehSayeh/cloud-assistant-ai.git
+cd cloud-assistant-ai
+```
 
-Initialize Amplify Project bash Copy Edit amplify init amplify push
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-Start the App bash Copy Edit npm start 🧠 Amazon Lex Bot The Lex bot includes custom intents to handle AWS-related tasks:
+### 3. Configure Amplify CLI
+```bash
+npm install -g @aws-amplify/cli
+amplify configure
+```
+> Follow the CLI prompts to set up your AWS credentials.
 
-ListEC2InstancesIntent
+### 4. Initialize & Push Amplify Project
+```bash
+amplify init
+amplify push
+```
 
-DescribeS3BucketsIntent
+### 5. Start the App
+```bash
+npm start
+```
 
-CheckLambdaFunctionsIntent
+---
 
-(Add your custom intents here...)
+## 🧠 Amazon Lex Bot
 
-💡 Each intent is connected to a Lambda function for fulfillment.
+Custom intents allow users to interact with AWS services through the chatbot:
 
-🛡️ Authentication Implemented using Amazon Cognito with:
+- `ListEC2InstancesIntent`
+- `DescribeS3BucketsIntent`
+- `CheckLambdaFunctionsIntent`
+- *(Add your own intents for more functionality)*
 
-User sign-up/login
+Each intent is connected to a corresponding Lambda function for fulfillment.
 
-Password reset
+---
 
-JWT token-based access to GraphQL API
+## 🛡️ Authentication with Amazon Cognito
 
-Secure role-based access via IAM
+Features include:
 
-📁 File Structure bash Copy Edit /src /components → React components /graphql → GraphQL schema and queries /amplify /backend → Amplify backend resources (Auth, API, Functions) /team-provider → Configuration for multi-dev environments 🧪 Example Usage Chatbot Prompt: "List my EC2 instances"
+- User sign-up and login
+- Secure JWT-based authentication
+- Password reset
+- Role-based access via IAM integration
 
-Response: "You have 3 EC2 instances running in us-east-1 region."
+---
 
-🧾 API Reference See /src/graphql for details on the GraphQL schema used with AWS AppSync. Typical queries and mutations include:
+## 📁 Project Structure
 
-graphql Copy Edit query ListLogs { listLogs { items { timestamp message } } } 🛠️ IAM & Team Setup See IAM Setup Guide (or add a link to your markdown guide or wiki)
+```bash
+/src
+  /components         → React components
+  /graphql            → GraphQL schema & operations
 
-Includes:
+/amplify
+  /backend            → Lambda functions, Auth, API
+  /team-provider-info → Multi-environment support
+```
 
-Securing root account with MFA
+---
 
-IAM roles for Lambda & Lex
+## 🧪 Example Usage
 
-IAM groups for Frontend, Backend, and DevOps
+![alt text](<Screenshot 2025-05-19 at 20.40.47-1.png>)
+![alt text](<Screenshot 2025-05-19 at 20.40.17-1.png>)
+---
 
-Programmatic users for Amplify CLI
+## 🧾 GraphQL API Reference
+
+You can find all GraphQL operations under `/src/graphql`.
+
+**Sample Query:**
+```graphql
+query ListLogs {
+  listLogs {
+    items {
+      timestamp
+      message
+    }
+  }
+}
+```
+![alt text](<Screenshot 2025-05-19 at 20.42.02-1.png>)
+---
+
+## 🛠️ IAM & Team Setup
+
+Follow your internal IAM setup guide or refer to [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) to configure:
+
+- Root account MFA
+- IAM roles for Lambda & Lex
+- IAM groups for developers and CI/CD
+- Programmatic users for Amplify CLI
+
+---
+
+## 📦 Releases
+
+Stay tuned for tagged releases and versioned changelogs.
